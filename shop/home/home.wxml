@@ -1,0 +1,11 @@
+<!--shop/home/home.wxml-->
+<text>shop/home/home.wxml</text>
+<!-- 首页 -->
+<view class="hd">
+	<image class="logo" src="{{seller.logo.url}}" />
+	<view class="banner">
+		<view class="seller">{{seller.name}}</view>
+		<view class="notice">{{seller.notice}}</view>
+		<view class="business-time">营业时间 {{seller.business_start}} - {{seller.business_end}}</view>
+	</view>
+</view>
