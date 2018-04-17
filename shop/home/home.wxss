@@ -6,3 +6,9 @@
 	padding: 10px 0 15px 0;
 	position:relative;
 }
+.bd {
+	margin-top: 6px;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: row;
+}

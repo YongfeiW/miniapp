@@ -34,12 +34,12 @@
 	margin-left: 5px;
 }
 
-/*菜品列表容器*/
+/*详情列表容器*/
 .food-container {
 	padding-bottom: 44px;
 }
 
-/*菜品列表*/
+/*详情列表*/
 .food-item {
 	display: flex;
 	flex-direction: row;

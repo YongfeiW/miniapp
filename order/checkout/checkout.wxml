@@ -62,7 +62,7 @@
 		</view>
 		<view class="item disperse" bindtap="naviToRemark">
 			<view class="title-label">订单备注</view>
-			<view class="subtitle-label remark-title">{{remark ? remark : '口味，偏好等'}}</view>
+			<view class="subtitle-label remark-title">{{remark ? remark : '送货上门，自提等'}}</view>
 			<view class="arrow"></view>
 		</view>
 	</view>

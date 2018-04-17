@@ -9,3 +9,6 @@
 		<view class="business-time">营业时间 {{seller.business_start}} - {{seller.business_end}}</view>
 	</view>
 </view>
+<view class='bd'>
+
+</view>

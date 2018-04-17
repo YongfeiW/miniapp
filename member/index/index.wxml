@@ -42,7 +42,7 @@
 	</view>
 	<view class="item">
 		<image class="hd" src="/images/food.png" />
-		<navigator class="bd" url="../../food/list/list" open-type="navigate" hover-class="none">菜品管理</navigator>
+		<navigator class="bd" url="../../food/list/list" open-type="navigate" hover-class="none">详情管理</navigator>
 		<view class="ft"></view>
 	</view>
 </view>

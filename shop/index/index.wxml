@@ -8,9 +8,9 @@
 		<view class="business-time">营业时间 {{seller.business_start}} - {{seller.business_end}}</view>
 	</view>
 </view>
-<!-- 菜品 -->
+<!-- 详情 -->
 <view class="bd">
-	<!-- 菜品分类 -->
+	<!-- 详情分类 -->
 	<view class="category-container">
 		<!-- 分类单品 -->
 		<view class="category-item {{categoryStates[index] ? 'category-item-active' : ''}}" wx:for="{{categoryObjects}}" wx:key="" bindtap="switchCategory" data-index="{{index}}">
@@ -20,9 +20,9 @@
 			<!-- <view class="badge">113</view> -->
 		</view>
 	</view>
-	<!-- 菜品列表 -->
+	<!-- 详情列表 -->
 	<view class="food-container">
-		<!-- 菜品单品 -->
+		<!-- 详情单品 -->
 		<view class="food-item" wx:for="{{foodObjects}}" wx:key="">
 			<!-- food list -->
 			<!-- 主图 -->
@@ -58,7 +58,9 @@
 		<view wx:if="{{amount}}" class="food-fee">{{amount}}</view>
 		<view wx:if="{{amount}}" class="express-fee">{{seller.express_fee}}</view>
 	</view>
-	<view class="checkout {{amount - seller.min_amount >= 0 && amount > 0 ? '' : 'checkout-disabled'}}" bindtap="{{amount - seller.min_amount >= 0 && amount > 0 ? 'checkout' : ''}}">{{amount - seller.min_amount >= 0 ? '去结算' : '还差' + (seller.min_amount - amount) + '元起送'}}</view>
+  <button type='primary' size='mini'>上传</button>
+	<view class="checkout {{amount - seller.min_amount >= 0 && amount > 0 ? '' : 'checkout-disabled'}}" bindtap="{{amount - seller.min_amount >= 0 && amount > 0 ? 'checkout' : ''}}">
+  {{amount - seller.min_amount >= 0 ? '去结算' : '还差' + (seller.min_amount - amount) + '元起送'}}</view>
 	
 </view>
 <!-- 购物车容器 -->

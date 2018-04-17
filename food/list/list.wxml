@@ -1,6 +1,6 @@
-<!-- 菜品列表 -->
+<!-- 详情列表 -->
 <view class="food-container">
-	<!-- 菜品单品 -->
+	<!-- 详情单品 -->
 	<view class="food-item" wx:for="{{foodObjects}}" wx:key="" bindtap="showDetail" data-index="{{index}}">
 		<!-- food list -->
 		<!-- 主图 -->
@@ -24,5 +24,5 @@
 <!-- 添加按钮 -->
 <view class="add-food" bindtap="add">
 	<image src="/images/add.png" class="icon" />
-	<view class="caption">新增菜品</view>
+	<view class="caption">新增详情</view>
 </view>

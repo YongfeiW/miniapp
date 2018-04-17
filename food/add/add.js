@@ -79,7 +79,7 @@ Page({
 		// 表单验证
 		if (form.title == '') {
 			wx.showModal({
-				title: '请填写菜品名称',
+				title: '请填写详情名称',
 				showCancel: false
 			});
 			return;
@@ -153,7 +153,7 @@ Page({
 		});
 	},
 	upload: function () {
-		// 上传或更换菜品图片
+		// 上传或更换详情图片
 		wx.chooseImage({
 			count: 1, // 默认9
 			sizeType: [ 'compressed'], // 可以指定是原图还是压缩图，默认二者都有

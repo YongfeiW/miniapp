@@ -24,7 +24,7 @@
 		</view>
 	</view>
 	<view class="item group-item">
-		<view class="caption">送餐地址</view>
+		<view class="caption">收货地址</view>
 		<view class="bd">
 			<view class="input-container">
 				<input name="area" value="{{area || address.area}}" placeholder="小区/写字楼/学校等" bindfocus="selectAddress" />

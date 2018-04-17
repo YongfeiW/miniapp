@@ -61,7 +61,7 @@
 
 /*主体部分*/
 
-/*分类与菜品*/
+/*分类与详情*/
 .bd {
 	margin-top: 6px;
 	padding-bottom: 50px;
@@ -125,14 +125,14 @@
 	top: -8px;
 }
 
-/*菜品列表容器*/
+/*详情列表容器*/
 .food-container {
 	width: 70%;
 	/*box-sizing: border-box;*/
 	margin-left: 10px;
 }
 
-/*菜品列表*/
+/*详情列表*/
 .food-item {
 	display: flex;
 	flex-direction: row;
@@ -265,7 +265,7 @@
 	content: '配送费￥';
 }
 
-/*菜品小计*/
+/*详情小计*/
 .food-fee {
 	flex: 1;
 	line-height: 1.5;
@@ -368,4 +368,9 @@
 
 .modal-body .fee:before {
 	content: '￥';
+}
+/*上传按钮*/
+.upload{
+color: blue;
+
 }
