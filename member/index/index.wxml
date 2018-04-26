@@ -28,7 +28,7 @@
 		<view class="ft"></view>
 	</view>
 </view>
-<!-- 管理员 -->
+<!-- 管理员--> 
 <view class="listview" wx:if="{{user.isAdmin}}">
 	<view class="item">
 		<image class="hd" src="/images/setting.png" />
@@ -46,6 +46,9 @@
 		<view class="ft"></view>
 	</view>
 </view>
+ <view class="logout">
+<navigator url="../../member/login/login"><button>商家：登录/注册</button></navigator>
+</view> 
 <!-- 退出登录 -->
 <view class="logout" bindtap="logout">
 	退出登录

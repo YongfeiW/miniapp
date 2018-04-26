@@ -237,5 +237,46 @@ Page({
 			amount: amount,
 			quantity: quantity
 		});
-	}
+	},
+ uploadFile:function() {
+  //  var tempFilePaths = res.temFilePaths;
+  //  wx.uploadFile({
+  //    url: 'https://api.bmobcloud.com',
+  //    filePath: 'tempFilePaths[0]',
+  //    name: 'file',
+  //    header: {},
+  //    formData: {},
+  //    success: function (res) { },
+  //    fail: function (res) { },
+  //    complete: function (res) { },
+  //  })
+   wx.getSavedFileList({
+     success: function (res) {
+       console.log(res.fileList)
+     }
+   })
+ },
+ upload: function () {
+   // 上传或更换详情图片
+   wx.chooseImage({
+     count: 1, // 默认9
+     sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+     sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+     success: function (res) {
+       var tempFilePaths = res.tempFilePaths;
+       var name = utils.random_filename(tempFilePaths[0]);//上传的图片的别名，建议可以用日期命名
+       console.log(name);
+       var file = new Bmob.File(name, [tempFilePaths[0]]);
+       file.save().then(function (thumb) {
+         console.log(thumb)
+         // 页面存值，wxml渲染
+         that.setData({
+           thumb_url: thumb.url()
+         });
+       }, function (error) {
+         console.log(error);
+       })
+     }
+   })
+ }
 })
