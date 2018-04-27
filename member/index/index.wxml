@@ -46,8 +46,8 @@
 		<view class="ft"></view>
 	</view>
 </view>
- <view class="logout">
-<navigator url="../../member/login/login"><button>商家：登录/注册</button></navigator>
+ <view class="login">
+ <navigator url="../../member/login/login">商家：登录/注册</navigator>
 </view> 
 <!-- 退出登录 -->
 <view class="logout" bindtap="logout">

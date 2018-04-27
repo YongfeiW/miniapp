@@ -1,0 +1,24 @@
+<!--member/login/login.wxml-->
+
+<view class='content'>
+   <form bindsubmit='add'> 
+  <view class='account'>
+      <view class='title'>账号</view>
+      <view class='num'><input bindinput='accountInput' placeholder='用户名/邮箱/手机号' type="text" maxlength="20" value="{{seller.account}}" focus="true" name="account" placeholder-style='color:#999999;'></input>
+      </view>
+  </view>
+    <view class='hr'></view>
+  <view class='account'>
+        <view class='title'>密码</view>
+        <view class='num'><input bindinput='accountInput' placeholder='请输入密码' type="password" maxlength="10" value="{{seller.password}}" name="password" placeholder-style='color:#999999;'></input>
+        </view>
+  </view>
+  <view class='hr'></view>
+  <view class='account'>
+      <view class='title'>确认密码</view>
+        <view class='num'><input bindinput='accountInput' placeholder='请再次输入密码' type="password" maxlength="10" value="{{subPassword}}" name="subPassword"  placeholder-style='color:#999999;'></input>
+        </view>
+  </view>
+  <button class='btn' disabled="{{disabled}}" type="{{btnstate}}" formType='submit'>注册</button>
+  </form>
+</view>

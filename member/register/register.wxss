@@ -1,4 +1,5 @@
 /* member/login/login.wxss */
+/* 样式 */
 .content{
   margin-top: 40px;
 }
@@ -24,14 +25,4 @@
   width: 90%;
   margin-top: 40px;
   color: #999999;
-}
-.operate{
-  display: flex;
-  flex-direction: row;
-}
-.operate view{
-  margin: 0 auto;
-  margin-top: 40px;
-  font-size: 18px;
-  color: #333333;
 }
