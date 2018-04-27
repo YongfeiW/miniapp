@@ -1,5 +1,6 @@
 {
   "pages": [
+    "shop/home/home",
     "shop/index/index",
     "order/list/list",
     "category/list/list",
@@ -14,7 +15,6 @@
     "address/add/add",
     "address/search/search",
     "order/detail/detail",
-    "shop/home/home",
     "member/register/register",
     "member/login/login"
   ],
@@ -27,7 +27,7 @@
     "selectedColor": "#0099ff",
     "list": [
       {
-        "pagePath": "shop/index/index",
+        "pagePath": "shop/home/home",
         "iconPath": "images/icon_home.png",
         "selectedIconPath": "images/icon_home_selected.png",
         "text": "首页"

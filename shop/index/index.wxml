@@ -1,4 +1,4 @@
-<!-- 首页 -->
+ <!-- 首页 
 <!-- 店招 -->
 <view class="hd">
 	<image class="logo" src="{{seller.logo.url}}" />
