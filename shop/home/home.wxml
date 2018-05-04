@@ -3,7 +3,17 @@
 <view>
   <image class="banner" mode="aspectFit" src="/images/banner.jpg"></image>
   <view class="top-placeholder">
-      <text class="text">附近商家</text>
+      <text>附近商家</text>
   </view>
   <navigator url='../../shop/index/index'><button>西六打印店</button></navigator>
+  	<!-- 附近商家 -->
+	<view class="category-container">
+		<!-- 分类单品 -->
+		<view class="category-item">
+			<!-- 标题 -->南亭打印店
+			<view class="category-content">西一打印店</view>
+			<!-- 数量红点 -->
+			<!-- <view class="badge">113</view> -->
+		</view>
+	</view>
 </view>

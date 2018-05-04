@@ -90,7 +90,7 @@ App({
 		// 微信支付
 		var openId = Bmob.User.current().get('authData').weapp.openid;
 		//传参数金额，名称，描述,openid
-		Bmob.Pay.wechatPay(order.get('total'), '銮菲打印', '订餐', openId).then(function (resp) {
+		Bmob.Pay.wechatPay(order.get('total'), '銮菲打印', '下单', openId).then(function (resp) {
 			console.log('resp');
 			console.log(resp);
 			//服务端返回成功
