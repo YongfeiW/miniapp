@@ -5,15 +5,20 @@
   <view class="top-placeholder">
       <text>附近商家</text>
   </view>
-  <navigator url='../../shop/index/index'><button>西六打印店</button></navigator>
   	<!-- 附近商家 -->
-	<view class="category-container">
-		<!-- 分类单品 -->
-		<view class="category-item">
-			<!-- 标题 -->南亭打印店
-			<view class="category-content">西一打印店</view>
-			<!-- 数量红点 -->
-			<!-- <view class="badge">113</view> -->
-		</view>
-	</view>
+
+<scroll-view class="c-minheight wx-scroll-view_6Bnkj2" data-c_e_id="wx_scroll_view_fcc22f86" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto; " upper-threshold="50">
+     <navigator class="wx-navigator_movielist_item" data-c_e_id="wx_navigator_46b77b4d" hover-class="navigator-hover" url="../../shop/index/index">
+        <view class="c-minheight wx-view_movilelist_item" data-c_e_id="wx_view_41e6dc0a">
+            <image class="wx-image_movielist_item_cover" data-c_e_id="wx_image_3f067087" mode="scaleToFill" src="http://bmob-cdn-17725.b0.upaiyun.com/2018/04/17/fb5b9b794057bb1480227fb7d6fc9c58.jpg" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image: url(http://bmob-cdn-17725.b0.upaiyun.com/2018/04/17/fb5b9b794057bb1480227fb7d6fc9c58.jpg); "/>
+            <view class="c-minheight wx-view_6zMKSh" data-c_e_id="wx_view_f95254a1">
+                <text class="c-block wx-image_movielist_item_title" data-c_e_id="wx_text_00e25920">西六打印店</text>
+                <text class="c-block wx-image_movielist_item_score allstar45" data-c_e_id="wx_text_53bda5e3">8.4</text>
+                <text class="c-block wx-image_movielist_item_director" data-c_e_id="wx_text_63f36d55">营业时间:11：03-21:00</text>
+                <text class="c-block wx-image_movielist_item_actors" data-c_e_id="wx_text_3b979059">特色:30年老店，有口皆碑</text>
+            </view>
+        </view>
+    </navigator>
+
+</scroll-view>
 </view>
