@@ -133,3 +133,15 @@ page {
 .common-info:last-child {
 	margin-bottom: 10px;
 }
+.food-hd {
+	width: 40%;
+}
+/*主图*/
+.thumb {
+	width: 60px;
+	height: 60px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	display: inline-table;
+}

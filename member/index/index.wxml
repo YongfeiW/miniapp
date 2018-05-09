@@ -20,13 +20,18 @@
 		<view class="caption">积分</view>
 	</view>
 </view>
-<!-- 列表 -->
-<view class="listview">
+<!-- 列表  -->
+<view class="listview" wx:if="{{user.isAdmin==false}}">
 	<view class="item">
 		<image class="hd" src="/images/address.png" />
 		<navigator class="bd" url="../../address/list/list" open-type="navigate" hover-class="none">收货地址</navigator>
 		<view class="ft"></view>
 	</view>
+  <!-- <view class="item">
+		<image class="hd" src="/images/holder.png" />
+		<navigator class="bd" open-type="navigate" hover-class="none">我的文件</navigator>
+		<view class="ft"></view>
+	</view> -->
 </view>
 <!-- 管理员--> 
 <view class="listview" wx:if="{{user.isAdmin}}">
@@ -45,10 +50,12 @@
 		<navigator class="bd" url="../../food/list/list" open-type="navigate" hover-class="none">详情管理</navigator>
 		<view class="ft"></view>
 	</view>
+  	<view class="item">
+		<image class="hd" src="/images/food.png" />
+		<view class='bd' open-type='navigate' hover-class='none'>添加/管理打印机</view>
+		<view class="ft"></view>
+	</view>
 </view>
- <view class="login">
- <navigator url="../../member/login/login">商家：登录/注册</navigator>
-</view> 
 <!-- 退出登录 -->
 <view class="logout" bindtap="logout">
 	退出登录

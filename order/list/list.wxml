@@ -29,7 +29,7 @@
 		<!-- 支付按钮 -->
 		<view class="payment">
 			<view class="button" data-index="{{index}}" catchtap="{{item.status == 0 && isAdmin == false ? 'payment' : 'showDetail'}}">
-				{{item.status == 0 && isAdmin == false ? '去支付' : '查看'}}
+				{{item.status == 0 && isAdmin == false ? '去支付' : '打印'}}
 			</view>
 		</view>
 	</view>

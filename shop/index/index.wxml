@@ -33,7 +33,7 @@
 				<view class="title">{{item.title}}</view>
 				<view class="summary">{{item.summary}}</view>
 				<view class="price-stepper">
-					<view class="price">{{item.price}}</view>
+					<view class="price">{{item.price}}/页</view>
 					<view class="stepper">
 						<!-- 减号 -->
 						<image src="/images/subtract.png" class="symbol" bindtap="subtract" wx:if="{{cartData[item.objectId]}}" data-food-id="{{item.objectId}}" />
@@ -58,9 +58,10 @@
 		<view wx:if="{{amount}}" class="food-fee">{{amount}}</view>
 		<view wx:if="{{amount}}" class="express-fee">{{seller.express_fee}}</view>
 	</view>
-  <button type='primary' size='mini' bindtap="upload" >上传</button>
+
+
 	<view class="checkout {{amount - seller.min_amount >= 0 && amount > 0 ? '' : 'checkout-disabled'}}" bindtap="{{amount - seller.min_amount >= 0 && amount > 0 ? 'checkout' : ''}}">
-  {{amount - seller.min_amount >= 0 ? '去结算' : '还差' + (seller.min_amount - amount) + '元起送'}}</view>
+  {{amount - seller.min_amount >= 0 ? '去结算' : '还差' + (seller.min_amount - amount) + '元起打印'}}</view>
 	
 </view>
 <!-- 购物车容器 -->

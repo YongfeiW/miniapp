@@ -31,7 +31,7 @@
 	<view class="list">
 		<view class="item" wx:for="{{order.detail}}" wx:key="">
 			<view class="title">{{item.title}}</view>
-			<view class="quantity">{{item.quantity}}</view>
+			<view class="quantity">{{item.quantity}}</view>页
 			<view class="price">{{item.price}}</view>
 		</view>
 	</view>
@@ -44,10 +44,17 @@
 	<view class="item">
 		<view class="total">{{order.total}}</view>
 	</view>
+      <view class="food-hd">
+				<image class="thumb" mode="aspectFill" src="{{order.thumb_url}}" />
+			</view>
+      <button>下载打印文件</button>
+  <!-- <view wx:if="{{isAdmin}}">
+  
+  </view> -->
 	<!-- 联系商家 -->
 	<view class="contact" bindtap="contact">
 		<image src="/images/telephone.png" class="telephone" />
-		<view>联系商家</view>
+		<view>{{isAdmin == true ? '联系客户' : '联系商家'}}</view>
 	</view>
 </view>
 

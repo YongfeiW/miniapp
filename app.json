@@ -14,9 +14,7 @@
     "order/checkout/checkout",
     "address/add/add",
     "address/search/search",
-    "order/detail/detail",
-    "member/register/register",
-    "member/login/login"
+    "order/detail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#0099ff",

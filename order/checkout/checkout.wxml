@@ -36,7 +36,7 @@
 		<view class="list">
 			<view class="item" wx:for="{{carts}}" wx:key="">
 				<view class="title">{{item.title}}</view>
-				<view class="quantity">{{item.quantity}}</view>
+				<view class="quantity">{{item.quantity}}页</view>
 				<view class="price">{{item.price}}</view>
 			</view>
 
@@ -51,15 +51,16 @@
 			<view class="amount">{{total}}</view>
 		</view>
 	</view>
+
 	<!-- 备注信息 -->
 	<view class="remark">
-		<view class="item disperse">
+		<!-- <view class="item disperse">
 			<view class="title-label">用户人数</view>
 				<picker bindchange="bindPickerChange" value="{{personCountIndex}}" range="{{personCountArray}}">
 					<view class="subtitle-label">{{personCountArray[personCountIndex]}}</view>
 				</picker>
 			<view class="arrow"></view>
-		</view>
+		</view> -->
 		<view class="item disperse" bindtap="naviToRemark">
 			<view class="title-label">订单备注</view>
 			<view class="subtitle-label remark-title">{{remark ? remark : '送货上门，自提等'}}</view>
@@ -67,6 +68,17 @@
 		</view>
 	</view>
 </view>
+  		<view class="item">
+		<view class="title">文件</view>
+		<view class="subtitle">
+			<image src="{{thumb_url ? thumb_url : '/images/upload.png'}}" bindtap="upload" />
+		</view>
+	</view>
+  <!-- <view class="buttons">
+	<button form-type="submit" class="confirm">提交文件</button>
+	</view> -->
+    
+   
 <!-- 提交订单 -->
 <view class="footer">
 	<view class="payment">{{total}}</view>

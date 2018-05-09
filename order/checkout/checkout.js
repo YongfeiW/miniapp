@@ -1,6 +1,7 @@
 // checkout.js
 var Bmob = require('../../utils/bmob.js');
 var WxNotificationCenter = require('../../utils/WxNotificationCenter.js');
+var utils = require('../../utils/utils.js');
 
 var that;
 
@@ -94,6 +95,8 @@ Page({
 	payment: function () {
 		// 创建订单
 		var order = new Bmob.Object('Order');
+   
+    order.set('thumb_url', that.data.thumb_url);
 		order.set('user', Bmob.User.current());
 		order.set('address', that.data.address);
 		order.set('express_fee', that.data.express_fee);
@@ -103,9 +106,24 @@ Page({
 		order.set('total', that.data.total);
 		order.set('status', 0);
 		order.set('detail', that.data.carts);
+
+    if (!that.data.thumb_url) {
+      wx.showModal({
+        title: '请上传文件',
+        showCancel: false
+      });
+      return;
+    }
 		order.save().then(function (orderCreated) {
 			// 保存成功，调用支付
-			getApp().payment(orderCreated);
+			// getApp().payment(orderCreated);
+      wx.showModal({
+        title: '下单成功',
+        showCancel: false,
+        success: function () {
+          wx.navigateBack();
+        }
+      });
 		}, function (res) {
 			console.log(res)
 			wx.showModal({
@@ -113,6 +131,56 @@ Page({
 				showCancel: false
 			})
 		});
-
-	}
+	},
+  // add: function(e){
+  //     var form = e.detail.value;
+  //     if (!that.data.thumb_url) {
+  //       wx.showModal({
+  //         title: '请上传文件',
+  //         showCancel: false
+  //       });
+  //       return;
+  //     }
+  //     var file = new Bmob.Object('File');
+  //     // 修改模式
+  //     if (that.data.isEdit) {
+  //       file = that.data.file;
+  //     }
+  //     file.set('thumb_url', that.data.thumb_url);
+  //     file.save().then(function (updatedFile) {
+  //       // 操作成功提示并返回上一页
+  //       wx.showModal({
+  //         title: that.data.isEdit ? '修改成功' : '添加成功',
+  //         showCancel: false,
+  //         success: function () {
+  //           wx.navigateBack();
+  //         }
+  //       });
+  //     }, function (err) {
+  //       console.log(err);
+  //     });
+  // },
+  upload: function () {
+    // 上传或更换详情图片
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths;
+        var name = utils.random_filename(tempFilePaths[0]);//上传的图片的别名，建议可以用日期命名
+        console.log(name);
+        var file = new Bmob.File(name, [tempFilePaths[0]]);
+        file.save().then(function (thumb) {
+          console.log(thumb)
+          // 页面存值，wxml渲染
+          that.setData({
+            thumb_url: thumb.url()
+          });
+        }, function (error) {
+          console.log(error);
+        })
+      }
+    })
+  }
 })
