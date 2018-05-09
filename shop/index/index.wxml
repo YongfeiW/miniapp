@@ -21,31 +21,31 @@
 		</view>
 	</view>
 	<!-- 详情列表 -->
-	<view class="food-container">
+	<view class="details-container">
 		<!-- 详情单品 -->
-		<view class="food-item" wx:for="{{foodObjects}}" wx:key="">
-			<!-- food list -->
+		<view class="details-item" wx:for="{{detailsObjects}}" wx:key="">
+			<!-- details list -->
 			<!-- 主图 -->
-			<view class="food-hd">
+			<view class="details-hd">
 				<image class="thumb" mode="aspectFill" src="{{item.thumb_url}}" />
 			</view>
-			<view class="food-bd">
+			<view class="details-bd">
 				<view class="title">{{item.title}}</view>
 				<view class="summary">{{item.summary}}</view>
 				<view class="price-stepper">
 					<view class="price">{{item.price}}/页</view>
 					<view class="stepper">
 						<!-- 减号 -->
-						<image src="/images/subtract.png" class="symbol" bindtap="subtract" wx:if="{{cartData[item.objectId]}}" data-food-id="{{item.objectId}}" />
+						<image src="/images/subtract.png" class="symbol" bindtap="subtract" wx:if="{{cartData[item.objectId]}}" data-details-id="{{item.objectId}}" />
 						<!-- 数量 -->
 						<view class="value">{{cartData[item.objectId]}}</view>
 						<!-- 加号 -->
-						<image src="/images/add.png" class="symbol" bindtap="add" data-food-id="{{item.objectId}}" />
+						<image src="/images/add.png" class="symbol" bindtap="add" data-details-id="{{item.objectId}}" />
 					</view>
 				</view>
 			</view>
 		</view>
-		<!-- ./ food list -->
+		<!-- ./ details list -->
 	</view>
 </view>
 <!-- 购物车 -->
@@ -55,7 +55,7 @@
 		<image src="/images/cart.png" class="cart" />
 	</view>
 	<view class="fee" bindtap="cascadeToggle">
-		<view wx:if="{{amount}}" class="food-fee">{{amount}}</view>
+		<view wx:if="{{amount}}" class="details-fee">{{amount}}</view>
 		<view wx:if="{{amount}}" class="express-fee">{{seller.express_fee}}</view>
 	</view>
 
@@ -74,15 +74,15 @@
 	    </view>
 	    <scroll-view class="modal-body" scroll-y="true" style="height: {{scrollHeight}}px;">
 	    	<view class="item" wx:for="{{cartObjects}}" wx:key="">
-	    		<view class="title">{{item.food.title}}</view>
-	    		<view class="fee">{{item.food.price * item.quantity}}</view>
+	    		<view class="title">{{item.details.title}}</view>
+	    		<view class="fee">{{item.details.price * item.quantity}}</view>
 	    		<view class="stepper">
 					<!-- 减号 -->
-					<image src="/images/subtract.png" class="symbol" bindtap="subtract" wx:if="{{cartData[item.food.objectId]}}" data-food-id="{{item.food.objectId}}" />
+					<image src="/images/subtract.png" class="symbol" bindtap="subtract" wx:if="{{cartData[item.details.objectId]}}" data-details-id="{{item.details.objectId}}" />
 					<!-- 数量 -->
-					<view class="value">{{cartData[item.food.objectId]}}</view>
+					<view class="value">{{cartData[item.details.objectId]}}</view>
 					<!-- 加号 -->
-					<image src="/images/add.png" class="symbol" bindtap="add" data-food-id="{{item.food.objectId}}" />
+					<image src="/images/add.png" class="symbol" bindtap="add" data-details-id="{{item.details.objectId}}" />
 				</view>
 	    	</view>
     	</scroll-view>

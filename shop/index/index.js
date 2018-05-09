@@ -6,7 +6,7 @@ var max_row_height = 5;
 // 行高
 var cart_offset = 90;
 // 底部栏偏移量
-var food_row_height = 49;
+var details_row_height = 49;
 Page({
 	data: {
 		categoryStates: [],
@@ -27,7 +27,7 @@ Page({
 			});
 		});
 		that.loadCategory();
-		that.loadFood();
+    that.loadDetails();
 	},
 	loadCategory: function () {
 		var query = new Bmob.Query('Category');
@@ -46,16 +46,16 @@ Page({
 			});
 		});
 	},
-	loadFood: function (category) {
-		var query = new Bmob.Query('Food');
+  loadDetails: function (category) {
+    var query = new Bmob.Query('Details');
 		if (category != undefined) {
 			query.equalTo('category', category);
 		}
 		query.ascending('priority');
 		query.limit(Number.MAX_VALUE);
-		query.find().then(function (foodObjects) {
+    query.find().then(function (detailsObjects) {
 			that.setData({
-				foodObjects: foodObjects
+        detailsObjects: detailsObjects
 			});
 		});
 	},
@@ -79,15 +79,15 @@ Page({
 			category: category,
 			categoryStates: categoryStates
 		});
-		that.loadFood(category);
+    that.loadDetails(category);
 	},
 	checkout: function () {
 		// 将对象序列化
 		var cartObjects = [];
 		that.data.cartObjects.forEach(function (item, index) {
 			var cart = {
-				title: item.food.toJSON().title,
-				price: item.food.toJSON().price,
+        title: item.details.toJSON().title,
+        price: item.details.toJSON().price,
 				quantity: item.quantity
 			};
 			cartObjects.push(cart);
@@ -99,58 +99,58 @@ Page({
 	},
 	add: function (e) {
 		// 所点商品id
-		var foodId = e.currentTarget.dataset.foodId;
-		// console.log(foodId);
+    var detailsId = e.currentTarget.dataset.detailsId;
+		// console.log(detailsId);
 		// 读取目前购物车数据
 		var cartData = that.data.cartData;
 		// 获取当前商品数量
-		var foodCount = cartData[foodId] ? cartData[foodId] : 0;
+    var detailsCount = cartData[detailsId] ? cartData[detailsd] : 0;
 		// 自增1后存回
-		cartData[foodId] = ++foodCount;
+    cartData[detailsId] = ++detailsCount;
 		// 设值到data数据中
 		that.setData({
 			cartData: cartData
 		});
 		// 转换成购物车数据为数组
-		that.cartToArray(foodId);
+    that.cartToArray(detailsId);
 	},
 	subtract: function (e) {
 		// 所点商品id
-		var foodId = e.currentTarget.dataset.foodId;
+    var detailsId = e.currentTarget.dataset.detailsId;
 		// 读取目前购物车数据
 		var cartData = that.data.cartData;
 		// 获取当前商品数量
-		var foodCount = cartData[foodId];
+    var detailsCount = cartData[detailsId];
 		// 自减1
-		--foodCount;
+    --detailsCount;
 		// 减到零了就直接移除
-		if (foodCount == 0) {
-			delete cartData[foodId]
+    if (detailsCount == 0) {
+      delete cartData[detailsId]
 		} else {
-			cartData[foodId] = foodCount;
+      cartData[detailsId] = detailsCount;
 		}
 		// 设值到data数据中
 		that.setData({
 			cartData: cartData
 		});
 		// 转换成购物车数据为数组
-		that.cartToArray(foodId);
+    that.cartToArray(detailsId);
 	},
-	cartToArray: function (foodId) {
+  cartToArray: function (detailsId) {
 		// 需要判断购物车数据中是否已经包含了原商品，从而决定新添加还是仅修改它的数量
 		var cartData = that.data.cartData;
 		var cartObjects = that.data.cartObjects;
-        var query = new Bmob.Query('Food');
+    var query = new Bmob.Query('Details');
         // 查询对象
-        query.get(foodId).then(function (food) {
+    query.get(detailsId).then(function (details) {
         	// 从数组找到该商品，并修改它的数量
         	for (var i = 0; i < cartObjects.length; i++) {
-        		if (cartObjects[i].food.id == foodId) {
+            if (cartObjects[i].details.id == detailsId) {
         			// 如果是undefined，那么就是通过点减号被删完了
-        			if (cartData[foodId] == undefined) {
+              if (cartData[detailsId] == undefined) {
         				cartObjects.splice(i, 1);
         			} else {
-	        			cartObjects[i].quantity = cartData[foodId];
+                cartObjects[i].quantity = cartData[detailsId];
         			}
         			that.setData({
         				cartObjects: cartObjects
@@ -162,8 +162,8 @@ Page({
         	}
         	// 添加商品到数组
             var cart = {};
-            cart.food = food;
-            cart.quantity = cartData[foodId];
+            cart.details = details;
+            cart.quantity = cartData[detailsId];
         	cartObjects.push(cart);
         	that.setData({
         		cartObjects: cartObjects
@@ -189,7 +189,7 @@ Page({
 		});
 		that.animation = animation;
 		// scrollHeight为商品列表本身的高度
-		var scrollHeight = (that.data.cartObjects.length <= max_row_height ? that.data.cartObjects.length : max_row_height) * food_row_height;
+    var scrollHeight = (that.data.cartObjects.length <= max_row_height ? that.data.cartObjects.length : max_row_height) * details_row_height;
 		// cartHeight为整个购物车的高度，也就是包含了标题栏与底部栏的高度
 		var cartHeight = scrollHeight + cart_offset;
 		animation.translateY(- cartHeight).step();
@@ -231,7 +231,7 @@ Page({
 		var amount = 0;
 		var quantity = 0;
 		cartObjects.forEach(function (item, index) {
-			amount += item.quantity * item.food.get('price');
+      amount += item.quantity * item.details.get('price');
 			quantity += item.quantity;
 		});
 		that.setData({

@@ -34,16 +34,16 @@ Page({
     });
   },
 
-  loadFood: function (seller) {
-    var query = new Bmob.Query('Food');
+  loadDetails: function (seller) {
+    var query = new Bmob.Query('Details');
     if (category != undefined) {
       query.equalTo('seller', seller);
     }
     query.ascending('priority');
     query.limit(Number.MAX_VALUE);
-    query.find().then(function (foodObjects) {
+    query.find().then(function (detailsObjects) {
       that.setData({
-        foodObjects: foodObjects
+        detailsObjects: detailsObjects
       });
     });
   },
@@ -67,7 +67,7 @@ Page({
       seller: seller,
       sellerStates: sellerStates
     });
-    that.loadFood(seller);
+    that.loadDetails(seller);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

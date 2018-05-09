@@ -7,7 +7,7 @@
 }
 
 /*底部添加按钮*/
-.add-food {
+.add-details {
 	border-top: 1px solid #eee;
 	position: fixed;
 	bottom: 0;
@@ -21,13 +21,13 @@
 	padding: 12px 0;
 }
 
-.add-food .icon {
+.add-details .icon {
 	width: 20px;
 	height: 20px;
 	margin-right: 5px;
 }
 
-.add-food .caption {
+.add-details .caption {
 	font-size: 14px;
 	color: #09f;
 	font-weight: bold;
@@ -35,12 +35,12 @@
 }
 
 /*详情列表容器*/
-.food-container {
+.details-container {
 	padding-bottom: 44px;
 }
 
 /*详情列表*/
-.food-item {
+.details-item {
 	display: flex;
 	flex-direction: row;
 	padding: 5px 0;
@@ -49,7 +49,7 @@
 }
 
 /*主图容器*/
-.food-hd {
+.details-hd {
 	width: 25%;
 }
 
@@ -62,7 +62,7 @@
 }
 
 /*商品信息*/
-.food-bd {
+.details-bd {
 	width: 75%;
 	margin-left: 10px;
 }

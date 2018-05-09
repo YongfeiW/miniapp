@@ -133,7 +133,7 @@ page {
 .common-info:last-child {
 	margin-bottom: 10px;
 }
-.food-hd {
+.details-hd {
 	width: 40%;
 }
 /*主图*/

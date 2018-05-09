@@ -126,14 +126,14 @@
 }
 
 /*详情列表容器*/
-.food-container {
+.details-container {
 	width: 70%;
 	/*box-sizing: border-box;*/
 	margin-left: 10px;
 }
 
 /*详情列表*/
-.food-item {
+.details-item {
 	display: flex;
 	flex-direction: row;
 	padding: 5px 0;
@@ -142,7 +142,7 @@
 }
 
 /*主图容器*/
-.food-hd {
+.details-hd {
 	width: 30%;
 }
 
@@ -157,7 +157,7 @@
 }
 
 /*商品信息*/
-.food-bd {
+.details-bd {
 	width: 70%;
 	margin-left: 10px;
 }
@@ -266,14 +266,14 @@
 }
 
 /*详情小计*/
-.food-fee {
+.details-fee {
 	flex: 1;
 	line-height: 1.5;
 	font-size: 18px;
 	margin-left: 4px;
 }
 
-.food-fee:before {
+.details-fee:before {
 	content: '￥';
 }
 

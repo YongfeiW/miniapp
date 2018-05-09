@@ -46,12 +46,12 @@
 		<view class="ft"></view>
 	</view>
 	<view class="item">
-		<image class="hd" src="/images/food.png" />
-		<navigator class="bd" url="../../food/list/list" open-type="navigate" hover-class="none">详情管理</navigator>
+		<image class="hd" src="/images/details.png" />
+		<navigator class="bd" url="../../details/list/list" open-type="navigate" hover-class="none">详情管理</navigator>
 		<view class="ft"></view>
 	</view>
   	<view class="item">
-		<image class="hd" src="/images/food.png" />
+		<image class="hd" src="/images/details.png" />
 		<view class='bd' open-type='navigate' hover-class='none'>添加/管理打印机</view>
 		<view class="ft"></view>
 	</view>

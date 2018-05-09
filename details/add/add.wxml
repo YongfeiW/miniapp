@@ -3,7 +3,7 @@
 	<view class="item">
 		<view class="title">详情名称</view>
 		<view class="subtitle">
-			<input type="text" name="title" value="{{food.title}}" placeholder="请填写分类名称" />
+			<input type="text" name="title" value="{{details.title}}" placeholder="请填写分类名称" />
 		</view>
 	</view>
 	<view class="item">
@@ -11,7 +11,7 @@
 		<view class="subtitle">
 			<picker mode="selector" range="{{categories}}" range-key="title" value="{{categoryIndex}}" bindchange="bindCategoryChanged">
 				<view class="picker">
-					{{category ? category.title : food.category.title}}
+					{{category ? category.title : details.category.title}}
 				</view>
 			</picker>
 		</view>
@@ -19,19 +19,19 @@
 	<view class="item">
 		<view class="title">价格</view>
 		<view class="subtitle">
-			<input type="text" name="price" value="{{food.price}}" placeholder="请填写价格" />
+			<input type="text" name="price" value="{{details.price}}" placeholder="请填写价格" />
 		</view>
 	</view>
 	<view class="item">
 		<view class="title">简述</view>
 		<view class="subtitle">
-			<input type="text" name="summary" value="{{food.summary}}" placeholder="一句话描述" />
+			<input type="text" name="summary" value="{{details.summary}}" placeholder="一句话描述" />
 		</view>
 	</view>
 	<view class="item">
 		<view class="title">排列序号</view>
 		<view class="subtitle">
-			<input type="number" name="priority" value="{{food.priority}}" placeholder="序号越小越靠前" />
+			<input type="number" name="priority" value="{{details.priority}}" placeholder="序号越小越靠前" />
 		</view>
 	</view>
 	<view class="item">

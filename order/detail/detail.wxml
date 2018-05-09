@@ -44,7 +44,7 @@
 	<view class="item">
 		<view class="total">{{order.total}}</view>
 	</view>
-      <view class="food-hd">
+      <view class="details-hd">
 				<image class="thumb" mode="aspectFill" src="{{order.thumb_url}}" />
 			</view>
       <button>下载打印文件</button>
